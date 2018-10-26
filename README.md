@@ -1,4 +1,4 @@
-Video Super Resolution <br>
+Video Super Resolution에서  'Deep Residual Network과 Distributed learning을 이용한 신발 상품 분류'로 주제를 바꾸게 되었습니다. <br>
 
 
 *1차 면담 9월 14일<br>
