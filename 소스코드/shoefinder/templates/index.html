@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Upload</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    html,
+    body {
+        height: 100%
+    }
+
+    .alert {
+        width: 40%;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<body>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <span class="navbar-brand mb-0 h1">SHOERCH</span>
+</nav>
+<div>
+<div class="alert alert-info" role="alert">
+    현재 TIMBERLAND 모델만 분류 가능합니다.
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+</div>
+<div class="h-100 row align-items-center">
+    <div class="container">
+        <div class="form-group">
+            <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+                <label for="file">TIMBERLAND 신발 사진을 올려주세요!</label>
+                <div class="card" style="width: 500px;">
+                    <img class="img_preview" src="..." alt="미리보기" style="width: 500px;">
+                </div>
+                <input type="file" class="form-control-file" id="file" name="file">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.img_preview').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#file").change(function() {
+  readURL(this);
+});
+</script>
+</body>
+</html>
