@@ -15,5 +15,5 @@ pandas
 psutil>=5.4.3
 py-cpuinfo>=3.3.0
 Jinja2==2.10
-urllib3==1.22
+urllib3==1.26.5
 typing
